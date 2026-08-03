@@ -1,9 +1,15 @@
 module github.com/kazeburo/mackerel-plugin-linux-memory
 
-go 1.16
+go 1.25.0
 
 require (
-	github.com/jessevdk/go-flags v1.5.0
-	github.com/mackerelio/go-mackerel-plugin v0.1.2 // indirect
-	github.com/prometheus/procfs v0.7.0 // indirect
+	github.com/jessevdk/go-flags v1.6.1
+	github.com/mackerelio/go-mackerel-plugin v0.1.6
+	github.com/prometheus/procfs v0.21.1
+)
+
+require (
+	github.com/mackerelio/golib v1.2.1 // indirect
+	golang.org/x/sys v0.46.0 // indirect
+	golang.org/x/text v0.35.0 // indirect
 )
