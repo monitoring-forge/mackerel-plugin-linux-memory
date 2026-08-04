@@ -1,4 +1,4 @@
-module github.com/kazeburo/mackerel-plugin-linux-memory
+module github.com/monitoring-forge/mackerel-plugin-linux-memory
 
 go 1.25.0
 
