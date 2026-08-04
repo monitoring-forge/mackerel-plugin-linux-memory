@@ -12,7 +12,6 @@
 ## Requirements
 
 - Linux カーネル（`/proc/meminfo` が必要）
-- Go 1.25 以上（ビルドする場合）
 
 ## Installation
 
@@ -24,20 +23,6 @@ GitHub Releases から最新版のバイナリをダウンロードしてくだ�
 
 ```bash
 mkr plugin install monitoring-forge/mackerel-plugin-linux-memory
-```
-
-### ソースからビルドする
-
-```bash
-git clone https://github.com/monitoring-forge/mackerel-plugin-linux-memory.git
-cd mackerel-plugin-linux-memory
-go build -o mackerel-plugin-linux-memory
-```
-
-Linux 向けにクロスコンパイルする場合:
-
-```bash
-make linux
 ```
 
 ## Usage
