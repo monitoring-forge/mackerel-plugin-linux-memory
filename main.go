@@ -46,6 +46,26 @@ func (u LinuxMemoryPlugin) MetricKeyPrefix() string {
 	return "linux-memory"
 }
 
+func meminfoValue(v *uint64) float64 {
+	if v == nil {
+		return 0
+	}
+	return float64(*v) * 1024
+}
+
+func meminfoSub(total *uint64, subs ...*uint64) float64 {
+	if total == nil {
+		return 0
+	}
+	remaining := float64(*total)
+	for _, v := range subs {
+		if v != nil {
+			remaining -= float64(*v)
+		}
+	}
+	return remaining * 1024
+}
+
 func (u LinuxMemoryPlugin) FetchMetrics() (map[string]float64, error) {
 	fs, err := procfs.NewFS("/proc")
 	if err != nil {
@@ -57,23 +77,23 @@ func (u LinuxMemoryPlugin) FetchMetrics() (map[string]float64, error) {
 	}
 
 	result := map[string]float64{
-		"total":       float64(*m.MemTotal * 1024),
-		"kernelstack": float64(*m.KernelStack * 1024),
-		"vmallocused": float64(*m.VmallocUsed * 1024),
-		"pagetables":  float64(*m.PageTables * 1024),
-		"mapped":      float64(*m.Mapped * 1024),
-		"anonpages":   float64(*m.AnonPages * 1024),
-		"slab":        float64(*m.Slab * 1024),
-		"buffers":     float64(*m.Buffers * 1024),
-		"cached":      float64(*m.Cached * 1024),
-		"free":        float64(*m.MemFree * 1024),
+		"total":       meminfoValue(m.MemTotal),
+		"kernelstack": meminfoValue(m.KernelStack),
+		"vmallocused": meminfoValue(m.VmallocUsed),
+		"pagetables":  meminfoValue(m.PageTables),
+		"mapped":      meminfoValue(m.Mapped),
+		"anonpages":   meminfoValue(m.AnonPages),
+		"slab":        meminfoValue(m.Slab),
+		"buffers":     meminfoValue(m.Buffers),
+		"cached":      meminfoValue(m.Cached),
+		"free":        meminfoValue(m.MemFree),
 	}
 
 	if m.MemAvailable != nil {
-		result["used"] = float64((*m.MemTotal - *m.MemAvailable) * 1024)
-		result["available"] = float64(*m.MemAvailable * 1024)
+		result["used"] = meminfoSub(m.MemTotal, m.MemAvailable)
+		result["available"] = meminfoValue(m.MemAvailable)
 	} else {
-		result["used"] = float64(*m.MemTotal - *m.MemFree - *m.Buffers - *m.Cached)
+		result["used"] = meminfoSub(m.MemTotal, m.MemFree, m.Buffers, m.Cached)
 	}
 
 	return result, nil
