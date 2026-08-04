@@ -1,17 +1,15 @@
 VERSION=0.0.7
-LDFLAGS=-ldflags "-w -s -X main.version=${VERSION}"
+GITCOMMIT?=$(shell git describe --dirty --always 2>/dev/null)
+LDFLAGS=-ldflags "-w -s -X main.version=${VERSION} -X main.commit=${GITCOMMIT}"
 all: mackerel-plugin-linux-memory
 
 .PHONY: mackerel-plugin-linux-process-status
 
-mackerel-plugin-linux-memory: main.go
+mackerel-plugin-linux-memory: *.go
 	go build $(LDFLAGS) -o mackerel-plugin-linux-memory
 
-linux: main.go
+linux: *.go
 	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o mackerel-plugin-linux-memory
-
-fmt:
-	go fmt ./...
 
 check:
 	go test -v ./...
