@@ -50,20 +50,20 @@ func meminfoValue(v *uint64) float64 {
 	if v == nil {
 		return 0
 	}
-	return float64(*v * 1024)
+	return float64(*v) * 1024
 }
 
 func meminfoSub(total *uint64, subs ...*uint64) float64 {
 	if total == nil {
 		return 0
 	}
-	remaining := *total
+	remaining := float64(*total)
 	for _, v := range subs {
 		if v != nil {
-			remaining -= *v
+			remaining -= float64(*v)
 		}
 	}
-	return float64(remaining * 1024)
+	return remaining * 1024
 }
 
 func (u LinuxMemoryPlugin) FetchMetrics() (map[string]float64, error) {
