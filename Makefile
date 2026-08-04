@@ -14,12 +14,7 @@ fmt:
 	go fmt ./...
 
 check:
-	go test ./...
+	go test -v ./...
 
-clean:
-	rm -rf mackerel-plugin-linux-memory
-
-tag:
-	git tag v${VERSION}
-	git push origin v${VERSION}
-	git push origin main
+lint:
+	golangci-lint run ./...
