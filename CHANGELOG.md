@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.0.9](https://github.com/monitoring-forge/mackerel-plugin-linux-memory/compare/v0.0.8...v0.0.9) - 2026-09-06
+
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/11
+- go: bump the dependencies group across 1 directory with 3 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/16
+- ci: bump Songmu/tagpr from 1.20.1 to 1.20.2 in the dependencies group across 1 directory by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/15
+- refactor: simplify build flags and update command-line options in main.go by @kazeburo in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/17
+
 ## [v0.0.8](https://github.com/monitoring-forge/mackerel-plugin-linux-memory/compare/v0.0.7...v0.0.8) - 2026-08-04
 
 - Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/3
