@@ -46,9 +46,14 @@ linux-memory.free       989589504       1627264100
 ### オプション
 
 ```bash
-$ ./mackerel-plugin-linux-memory --version
-mackerel-plugin-linux-memory 0.0.7
-Compiler: gc go1.25.0
+Usage:
+  mackerel-plugin-linux-memory [OPTIONS]
+
+Application Options:
+  -v, --version  Show version
+
+Help Options:
+  -h, --help     Show this help message
 ```
 
 ## Metrics
