@@ -1,6 +1,6 @@
 module github.com/monitoring-forge/mackerel-plugin-linux-memory
 
-go 1.25.0
+go 1.26.0
 
 require (
 	github.com/mackerelio/go-mackerel-plugin v0.1.6
@@ -15,8 +15,8 @@ require (
 
 require (
 	github.com/mackerelio/golib v1.2.2 // indirect
-	github.com/monitoring-forge/flagrun v0.0.8
+	github.com/monitoring-forge/flagrun v0.0.9
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
-	golang.org/x/sys v0.47.0 // indirect
+	golang.org/x/sys v0.48.0 // indirect
 	golang.org/x/text v0.41.0 // indirect
 )
