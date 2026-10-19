@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.0.10](https://github.com/monitoring-forge/mackerel-plugin-linux-memory/compare/v0.0.9...v0.0.10) - 2026-10-19
+
+- go: bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/18
+- ci: bump Songmu/tagpr from 1.20.2 to 1.20.3 in the dependencies group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/19
+- go: bump the dependencies group with 2 updates by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/21
+- Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/22
+- ci: bump Songmu/tagpr from 1.20.3 to 1.21.1 in the tagpr group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/24
+- ci: bump Songmu/tagpr from 1.21.1 to 1.21.2 in the tagpr group by @dependabot[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/25
+
 ## [v0.0.9](https://github.com/monitoring-forge/mackerel-plugin-linux-memory/compare/v0.0.8...v0.0.9) - 2026-09-06
 
 - Sync files with `monitoring-forge/github-common` by @monitoring-forge-files-sync-action[bot] in https://github.com/monitoring-forge/mackerel-plugin-linux-memory/pull/11
