@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/mackerelio/go-mackerel-plugin v0.1.6
-	github.com/prometheus/procfs v0.22.0
+	github.com/prometheus/procfs v0.23.0
 	github.com/stretchr/testify v1.12.1
 )
 
@@ -16,7 +16,7 @@ require (
 require (
 	github.com/mackerelio/golib v1.2.2 // indirect
 	github.com/monitoring-forge/flagrun v0.0.10
-	go.yaml.in/yaml/v3 v3.0.5 // indirect
-	golang.org/x/sys v0.48.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
+	go.yaml.in/yaml/v3 v3.0.6 // indirect
+	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 )
